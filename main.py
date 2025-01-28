@@ -2,7 +2,7 @@ import logging
 import os
 from aiogram import Bot, Dispatcher, types
 from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
-from aiogram.utils import executor
+from aiogram.utils.executor import start_polling  # Обновленный импорт
 from bs4 import BeautifulSoup
 import aiohttp
 import asyncio
@@ -102,4 +102,4 @@ async def send_payment_info(message: types.Message):
 
 # Запуск бота
 if __name__ == "__main__":
-    executor.start_polling(dp, skip_updates=True)
+    start_polling(dp, skip_updates=True)  # Обновленный вызов функции
